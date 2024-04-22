@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Irish Potato Famine</title>
+</head>
+
+<style>
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.tab-link.current {
+    background-color: #eee;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>The Great Irish Potato Famine</h1>
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="overview">Overview</li>
+            <li class="tab-link" data-tab="causes">Causes</li>
+            <li class="tab-link" data-tab="impact">Impact</li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane current" id="overview">
+                <p>The Great Irish Potato Famine, also known as the Great Hunger (An Gorta Mór in Irish), was a period of mass starvation, disease, and emigration that occurred in Ireland from 1845 to 1852.  This historical event remains a defining moment in Irish history and its diaspora.</p>
+                <p>Let's explore the causes, impact, and lasting legacy of this tragedy.</p>
+                <cite>Source: [Wikipedia: Great Famine (Ireland)](https://en.wikipedia.org/wiki/Great_Famine_(Ireland))</cite>
+            </div>
+            <div class="tab-pane" id="causes">
+                <h2>Causes of the Famine</h2>
+                <p>The immediate cause of the famine was the infestation of potato crops by a water mold called Phytophthora infestans, which caused late blight. This disease destroyed the potato plants, leaving the population with little to no food source.</p>
+                <p>However, several underlying factors contributed to the severity of the famine:</p>
+                <ul>
+                    <li>**Dependence on the Potato:**  Irish people heavily relied on potatoes for most of their diet, making them extremely vulnerable to a potato crop failure.</li>
+                    <li>**Landlord System:** Ireland was under British rule, and a harsh landownership system forced tenant farmers to cultivate cash crops like grain for export, even though they couldn't eat them.</li>
+                    <li>**Government Relief Efforts:** The British government's relief efforts were widely criticized as inadequate and insensitive to the dire situation.</li>
+                </ul>
+                <cite>Source: [Britannica: Great Famine](https://www.britannica.com/event/Great-Famine)</cite>
+            </div>
+            <div class="tab-pane" id="impact">
+                <h2>Impact of the Famine</h2>
+                <p>The impact of the Famine was devastating. Estimates suggest over one million people died from starvation or famine-related diseases like typhus.</p>
+                <p>Millions more were forced to emigrate, particularly to North America, forever altering the demographics of Ireland and the receiving countries.</p>
+                <p>The Famine also had lasting social, political, and economic consequences that continue to shape Irish identity today.</p>
+                <cite>Source: [History Channel: Irish Potato Famine](https://history.com/topics/immigration/irish-potato-famine)</cite>
+            </div>
+        </div>
+    </div>
+    <script>
+    const tabLinks = document.querySelectorAll('.tab-link');
+const tabContent = document.querySelector('.tab-content');
+
+tabLinks.forEach(function(el) {
+  el.addEventListener('click', openTab);
+});
+
+function openTab(e) {
+  const selectedTab = e.target;
+  const selectedTabId = selectedTab.dataset.tab;
+
+  tabLinks.forEach(function(el) {
+    el.classList.remove('current');
+  });
+
+  selectedTab.classList.add('current');
+
+  const tabPane = tabContent.querySelector(`#${selectedTabId}`);
+  tabContent.querySelectorAll('.tab-pane').forEach(function(el) {
+    el.classList.remove('current');
+  });
+  tabPane.classList.add('current');
+}
+
+    </script>
+</body>
+
+</html>
+
+            
